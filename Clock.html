@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="Clock.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock</title>
+  </head>
+  <body>
+    <div id="helo"></div>
+      <div class="divm">
+        <h1 style="color:darkred;position:relative;left:140px; top:30px;">DIGITAL CLOCK</h1>
+        <div class="de">
+            <div id="h" class="div1"></div>
+            <div id="m" class="div2"></div>
+            <div id="s" class="div3"></div>
+        </div>
+      <div id="ampm"></div>
+    </div>
+  </body>
+  <script>
+  
+    // Calling showTime function at every second
+    setInterval(showTime, 1000);
+    // Defining showTime funcion
+    function showTime() {
+      // Getting current time and date
+      let time = new Date();
+      let hour = time.getHours();
+      let min = time.getMinutes();
+      let sec = time.getSeconds();
+      let am_pm = "AM";
+
+      //Setting time for 12 Hrs format
+      am_pm=(hour>12)? "PM" : "AM";
+      //  let currentTime =
+      //      hour +
+      //      ":" +
+      //      min +
+      //      ":" +
+      //      sec +
+      //      am_pm
+      // Displaying the time
+      document.getElementById("h").innerHTML = hour + ":";
+      document.getElementById("m").innerHTML = min + ":";
+      document.getElementById("s").innerHTML = sec;
+      document.getElementById("ampm").innerHTML = am_pm;
+    }
+    showTime();
+  </script>
+</html>
